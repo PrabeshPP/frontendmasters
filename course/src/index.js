@@ -6,6 +6,10 @@ const server=http.createServer(async(req,res)=>{
         res.write(JSON.stringify({message:"hello"}));
         res.end();
         return;
+    }else if(req.url==="/prabesh" && req.method==="GET"){
+        res.writeHead(200,{"Content-Type":"application/json"});
+        res.write(JSON.stringify({message:"Hey I am Prabesh"}))
+        res.end();
     }
     res.writeHead(404,{"Content-Type":"application/json"});
     res.end(JSON.stringify({message:"nope"}));
