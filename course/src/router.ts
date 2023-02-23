@@ -3,8 +3,8 @@ import {Router} from "express";
 
 const router=Router();
 
-router.route('/product').get(()=>{
-
+router.route('/product').get((req,res)=>{
+    res.json({message:"hello from product"})
 })
 
 router.route("/product/:id").get(()=>{
@@ -72,6 +72,9 @@ router.route("/updatepoint").post(()=>{
 router.route("/updatepoint/:id").delete(()=>{
      
 })
+
+
+export default router;
 
 
 
