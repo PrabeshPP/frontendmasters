@@ -1,5 +1,6 @@
 import express from "express"
 import router from "./router";
+import { protect } from "./modules/auth";
 
 const app=express();
 app.use(express.json());
@@ -13,6 +14,6 @@ app.get("/",(req,res)=>{
 });
 
 
-app.use("/api",router);
+app.use("/api",protect,router);
 
 export default app
